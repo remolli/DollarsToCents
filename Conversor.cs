@@ -8,18 +8,17 @@ namespace DollarsToCents
 {
     public static class Conversor
     {
-        public static string ToDollar(int cents)
+        public static string ToDollar(string cents)
         {
-            string centsString = cents.ToString();
-            string dollar = "$" + centsString.Insert(centsString.Length-2, ".");
+            string dollar = "$" + cents.Insert(cents.Length-2, ".");
             return dollar;
         }
         
-        public static int ToCents(string value)
+        public static string ToCents(string value)
         {
             string dollarsFormat = value.Replace("$", "");
             string dollars = dollarsFormat.Replace(".", "");
-            int cents = Convert.ToInt32(dollars);
+            string cents = dollars;
             return cents;
         }
     }
