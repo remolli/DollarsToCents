@@ -29,7 +29,7 @@ else if(escolha == "2")
     Console.ResetColor();
     Console.WriteLine();
     Console.Write("Insira a quantidade em Cents: ");
-    int cents = Convert.ToInt32(Console.ReadLine());
+    string cents = Console.ReadLine();
     Console.WriteLine("Cents: " + Conversor.ToDollar(cents));
 }
 else

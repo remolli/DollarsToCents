@@ -10,8 +10,24 @@ namespace DollarsToCents
     {
         public static string ToDollar(string cents)
         {
-            string dollar = "$" + cents.Insert(cents.Length-2, ".");
-            return dollar;
+            if (cents.Length == 1)
+            {
+                string dollar = "$" + cents.Insert(0, "0");
+                dollar = dollar.Insert(1, "0");
+                dollar = dollar.Insert(dollar.Length-2, ".");
+                return dollar;
+            }
+            else if (cents.Length == 2)
+            {
+                string dollar = "$" + cents.Insert(0, "0");
+                dollar = dollar.Insert(dollar.Length - 2, ".");
+                return dollar;
+            }
+            else
+            {
+                string dollar = "$" + cents.Insert(cents.Length-2, ".");
+                return dollar;
+            }
         }
         
         public static string ToCents(string value)
